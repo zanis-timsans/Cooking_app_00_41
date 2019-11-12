@@ -19,6 +19,7 @@ package org.tensorflow.lite.examples.detection;
 import android.Manifest;
 import android.app.Fragment;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.hardware.Camera;
 import android.hardware.camera2.CameraAccessException;
@@ -34,24 +35,29 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.HandlerThread;
 import android.os.Trace;
-import androidx.annotation.NonNull;
-import com.google.android.material.bottomsheet.BottomSheetBehavior;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.SwitchCompat;
-import androidx.appcompat.widget.Toolbar;
 import android.util.Size;
 import android.view.Surface;
 import android.view.View;
 import android.view.ViewTreeObserver;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-import java.nio.ByteBuffer;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SwitchCompat;
+import androidx.appcompat.widget.Toolbar;
+
+import com.google.android.material.bottomsheet.BottomSheetBehavior;
+
 import org.tensorflow.lite.examples.detection.env.ImageUtils;
 import org.tensorflow.lite.examples.detection.env.Logger;
+
+import java.nio.ByteBuffer;
 
 public abstract class CameraActivity extends AppCompatActivity
     implements OnImageAvailableListener,
@@ -86,6 +92,8 @@ public abstract class CameraActivity extends AppCompatActivity
   private SwitchCompat apiSwitchCompat;
   private TextView threadsTextView;
 
+  private Button myButton;
+
   @Override
   protected void onCreate(final Bundle savedInstanceState) {
     LOGGER.d("onCreate " + this);
@@ -102,7 +110,22 @@ public abstract class CameraActivity extends AppCompatActivity
     } else {
       requestPermission();
     }
+    myButton = (Button) findViewById(R.id.button);
 
+    myButton.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View v) {
+
+        // connecting this main activity with the second activity and pass on a string
+
+        Intent intent = new Intent(CameraActivity.this, TutorialActivity.class);
+
+        intent.putExtra("activityOne", "I am from the First Activity Hoorraaaayyy!!");
+
+        startActivity(intent);
+
+      }
+    });
     threadsTextView = findViewById(R.id.threads);
     plusImageView = findViewById(R.id.plus);
     minusImageView = findViewById(R.id.minus);

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_light"
+    tools:context=".StartActivity">
+
+    <ImageView
+        android:id="@+id/imagePot"
+        android:layout_width="249dp"
+        android:layout_height="277dp"
+        android:layout_gravity="center_horizontal|center_vertical"
+        app:srcCompat="@drawable/pot" />
+
+    <TextView
+        android:id="@+id/startTitle"
+        android:layout_width="match_parent"
+        android:layout_height="178dp"
+        android:fontFamily="@font/alike"
+        android:gravity="bottom|center_horizontal"
+        android:text="@string/app_title"
+        android:textColor="@color/title_color"
+        android:textSize="48sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
+        android:layout_gravity="bottom"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="40dp"
+            android:text="Please read Terms and Services to continue"
+            android:textColor="@color/title_color" />
+
+        <Button
+            android:id="@+id/buttonContinue"
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:background="@color/colorPrimary"
+            android:text="@string/button_continue"
+            android:textColor="@android:color/white" />
+
+    </LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

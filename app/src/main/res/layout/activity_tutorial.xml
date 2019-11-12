@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_light"
+    tools:context=".TutorialActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingTop="35dp">
+
+        <ImageView
+            android:id="@+id/imageTutorial"
+            android:layout_width="249dp"
+            android:layout_height="277dp"
+            android:layout_gravity="center_horizontal|top|center_vertical"
+            app:srcCompat="@drawable/laptop" />
+
+        <TextView
+            android:id="@+id/startTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/alike"
+            android:gravity="bottom|center_horizontal"
+            android:paddingTop="35dp"
+            android:text="Tutorial"
+            android:textColor="@color/title_color"
+            android:textSize="40sp" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center"
+            android:layout_marginBottom="40dp"
+            android:paddingTop="20dp"
+            android:text="Learn how to use application!"
+            android:textColor="@color/title_color" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="111dp"
+        android:layout_gravity="bottom"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/buttonNext"
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@color/colorPrimary"
+            android:text="Next"
+            android:textColor="@android:color/white" />
+
+    </LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
